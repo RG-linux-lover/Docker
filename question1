@@ -1,12 +1,14 @@
-1. create container with following config
+## HI ALL TRY TO SOLVE FIRST THEN SEE THE ANSWERS , THANK YOU 
+
+Question1. create container with following config
 	- name the container "demo-app"
         - run the container in deamon mode
         - publish the port as 0.0.0.0/0:9090->80
 	- use mitrasonu/svvvweb:v1 as a base image
 
-Answer = 
-docker container run --name demo-app -d -p 0.0.0.0:9090:80 mitrasonu/svvvweb:v1
-============================================================================================================
+Answer =    docker container run --name demo-app -d -p 0.0.0.0:9090:80 mitrasonu/svvvweb:v1
+
+==================================================================================================================================================================
 2. create container with following config
 
 	- set container name as myDB
@@ -19,18 +21,18 @@ docker container run --name demo-app -d -p 0.0.0.0:9090:80 mitrasonu/svvvweb:v1
 		MYSQL_PASSWORD=Pa55word
 	Download mysql dump: from  https://github.com/sonulodha/docker/blob/master/testDB.sql 
 	Restore Database (testDB)
-Answer= 
-1.docker container run --name myDB -d -p 0.0.0.0:3307:3306 -e MYSQL_ROOT_PASSWORD=r00TPa55word -e MYSQL_DATABASE=testDB -e MYSQL_USER=lisa -e MYSQL_PASSWORD=Pa55word mysql
+Answer = 
+1. docker container run --name myDB -d -p 0.0.0.0:3307:3306 -e MYSQL_ROOT_PASSWORD=r00TPa55word -e MYSQL_DATABASE=testDB -e MYSQL_USER=lisa -e MYSQL_PASSWORD=Pa55word mysql
 2. wget clone https://github.com/sonulodha/docker/blob/master/testDB.sql
 3. docker container exec -it myDB sh mysqldump -u root --password=r00TPa55word > testDB.sql
 docker exec myDB sh -c 'exec mysqldump testDB -uroot -p"$MYSQL_ROOT_PASSWORD"' < testDB.sql
 
-============================================================================================================
+==================================================================================================================================================================
 3. create container using docker file with following config
 
 	- use centos as a base image
 	- set container name as user
-	- install the packages openssh-server  mariadb-server
+	- install the packages openssh-server
         - make user "test" in the container
         - set user's password as "userpass"
 	- set new image name as my-ssh
@@ -51,18 +53,4 @@ CMD ["/usr/sbin/sshd", "-D"]
 	docker container run -d --name user my-ssh
 	ssh test@172.17.0.2
 
-=============================================================================================================
-
-
-
-
-
-
-
-
-
-
-
-
-
-============================================================================================================
+==================================================================================================================================================================
